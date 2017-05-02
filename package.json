@@ -1,0 +1,46 @@
+{
+  "name": "coffee-webapp",
+  "version": "0.0.0",
+  "description": "A web app for the coffee API for Abakus.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "lint": "eslint --ext js,jsx client/ server/ && stylelint client/**/*.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/webkom/coffee.git"
+  },
+  "author": "Abakus Webkom (http://webkom.abakus.no)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webkom/coffee/issues"
+  },
+  "homepage": "https://github.com/webkom/coffee",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "react-hot-loader": "^1.3.1",
+    "style-loader": "^0.17.0",
+    "stylelint": "^7.10.1",
+    "stylelint-config-standard": "^16.0.0",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-hot-middleware": "^2.18.0"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "whatwg-fetch": "^2.0.3"
+  }
+}

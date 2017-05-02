@@ -1,0 +1,10 @@
+.wrapper {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+.title {
+  color: #f00;
+  margin-top: 100px;
+}
