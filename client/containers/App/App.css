@@ -5,6 +5,11 @@
 }
 
 .title {
-  color: #f00;
+  color: #000;
   margin-top: 100px;
+}
+
+.barChartWrapper {
+  max-height: 10px;
+  margin: 40px;
 }

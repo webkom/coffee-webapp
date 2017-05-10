@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './App.css';
 import { getStats, getStatus } from '../../api';
+import BarChart from '../../components/BarChart';
 
 class App extends React.Component {
 
@@ -43,6 +44,14 @@ class App extends React.Component {
         { this.state.status ?
           <h1 className={styles.title}>{this.coffeeStatus()}</h1>
         : null }
+
+        { this.state.stats ?
+          <div className={styles.barChartWrapper}>
+            <BarChart stats={this.state.stats.stats} />
+          </div>
+        : null }
+
+
       </div>
     );
   }
