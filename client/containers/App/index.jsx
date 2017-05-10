@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './App.css';
 import { getStats, getStatus } from '../../api';
 import BarChart from '../../components/BarChart';
+import ApiDoc from '../../components/ApiDoc';
 
 class App extends React.Component {
 
@@ -50,6 +51,39 @@ class App extends React.Component {
             <BarChart stats={this.state.stats.stats} />
           </div>
         : null }
+
+        <div>
+          <h1>API</h1>
+          <ApiDoc
+            key="status"
+            verb="GET"
+            endpoint="/api/status"
+            description="Returnerer data om sist gang kaffetrakteren var på."
+            example={JSON.stringify({
+              coffee: {
+                status: true,
+                last_start: '2012-12-12 12:12',
+                time_since: {
+                  hours: 0,
+                  minutes: 0,
+                },
+              },
+            }, null, 2)}
+          />
+          <ApiDoc
+            key="stats"
+            verb="GET"
+            endpoint="/api/stats"
+            description="Returnerer statistikk om bruket av kaffetrakteren."
+            example={JSON.stringify({
+              stats: {
+                '2012-12-12': 3,
+                '2012-12-13': 1,
+                '2012-12-14': 7,
+              },
+            }, null, 2)}
+          />
+        </div>
 
 
       </div>
