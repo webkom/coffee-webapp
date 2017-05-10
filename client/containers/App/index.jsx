@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import styles from './App.css';
 import { getStats, getStatus } from '../../api';
 import BarChart from '../../components/BarChart';
@@ -41,7 +42,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={styles.wrapper}>
+      <Grid fluid className={styles.wrapper}>
         { this.state.status ?
           <h1 className={styles.title}>{this.coffeeStatus()}</h1>
         : null }
@@ -50,43 +51,45 @@ class App extends React.Component {
           <div className={styles.barChartWrapper}>
             <BarChart stats={this.state.stats.stats} />
           </div>
-        : null }
+          : null }
 
-        <div>
-          <h1>API</h1>
-          <ApiDoc
-            key="status"
-            verb="GET"
-            endpoint="/api/status"
-            description="Returnerer data om sist gang kaffetrakteren var på."
-            example={JSON.stringify({
-              coffee: {
-                status: true,
-                last_start: '2012-12-12 12:12',
-                time_since: {
-                  hours: 0,
-                  minutes: 0,
+        <h1>API</h1>
+        <Row>
+          <Col xs>
+            <ApiDoc
+              key="status"
+              verb="GET"
+              endpoint="/api/status"
+              description="Returnerer data om sist gang kaffetrakteren var på."
+              example={JSON.stringify({
+                coffee: {
+                  status: true,
+                  last_start: '2012-12-12 12:12',
+                  time_since: {
+                    hours: 0,
+                    minutes: 0,
+                  },
                 },
-              },
-            }, null, 2)}
-          />
-          <ApiDoc
-            key="stats"
-            verb="GET"
-            endpoint="/api/stats"
-            description="Returnerer statistikk om bruket av kaffetrakteren."
-            example={JSON.stringify({
-              stats: {
-                '2012-12-12': 3,
-                '2012-12-13': 1,
-                '2012-12-14': 7,
-              },
-            }, null, 2)}
-          />
-        </div>
-
-
-      </div>
+              }, null, 2)}
+            />
+          </Col>
+          <Col xs>
+            <ApiDoc
+              key="stats"
+              verb="GET"
+              endpoint="/api/stats"
+              description="Returnerer statistikk om bruket av kaffetrakteren."
+              example={JSON.stringify({
+                stats: {
+                  '2012-12-12': 3,
+                  '2012-12-13': 1,
+                  '2012-12-14': 7,
+                },
+              }, null, 2)}
+            />
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 
