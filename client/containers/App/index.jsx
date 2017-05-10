@@ -30,6 +30,8 @@ class App extends React.Component {
 
     if (status.time_since.hours < 1) {
       return `Kaffen ble satt på for ${status.time_since.minutes} minutter siden.`;
+    } else if (status.time_since.hours === 1) {
+      return `Kaffen ble satt på for ${status.time_since.hours} time og ${status.time_since.minutes} minutter siden.`;
     }
 
     return `Kaffen ble satt på for ${status.time_since.hours} timer og ${status.time_since.minutes} minutter siden.`;
