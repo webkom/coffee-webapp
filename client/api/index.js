@@ -1,7 +1,11 @@
 import 'whatwg-fetch';
 
-// const apiUrl = 'https://kaffe.abakus.no';
-const apiUrl = 'http://127.0.0.1:5000';
+/*
+global API_URL
+The global API_URL is set by Webpack's DefinePlugin.
+If NODE_ENV is production, it equals https://kaffe.abakus.no
+If not, it equals http://127.0.0.1:5000
+*/
 
 /**
  * Returns coffee status
@@ -18,7 +22,7 @@ const apiUrl = 'http://127.0.0.1:5000';
     }
   }
  */
-export const getStatus = () => fetch(`${apiUrl}/api/status`).then(res => res.json());
+export const getStatus = () => fetch(`${API_URL}/api/status`).then(res => res.json());
 
 
 /**
@@ -33,4 +37,4 @@ export const getStatus = () => fetch(`${apiUrl}/api/status`).then(res => res.jso
     }
   }
 */
-export const getStats = () => fetch(`${apiUrl}/api/stats`).then(res => res.json());
+export const getStats = () => fetch(`${API_URL}/api/stats`).then(res => res.json());
